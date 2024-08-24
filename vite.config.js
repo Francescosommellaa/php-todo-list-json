@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      'vue': 'vue/dist/vue.esm-browser.js'
+      '/server': 'http://localhost:8000'
     }
   }
 });
