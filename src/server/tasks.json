@@ -1,0 +1,22 @@
+[
+    {
+        "text": "Comprare il latte",
+        "completed": false
+    },
+    {
+        "text": "Fare una passeggiata",
+        "completed": false
+    },
+    {
+        "text": "Leggere un libro",
+        "completed": false
+    },
+    {
+        "text": "Pulire la casa",
+        "completed": false
+    },
+    {
+        "text": "Chiamare un amico",
+        "completed": false
+    }
+]

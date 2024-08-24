@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '/server': 'http://localhost:8000'
+      '@': '/src'
     }
   }
 });
