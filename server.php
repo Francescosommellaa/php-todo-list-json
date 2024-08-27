@@ -15,7 +15,10 @@ if (isset($_POST['text']) && isset($_POST['description'])) {
     file_put_contents('tasks.json', json_encode($list));
 }
 
-if(isset())
+if (isset($_POST['indexToToggle'])) {
+    $indexToToggle = $_post['indexToToggle'];
+    $list[$indexToToggle]['done'] = !list[$indexToToggle];
+}
 
 header('Content-Type: applicationm/json');
 
