@@ -5,9 +5,13 @@ $list = json_decode($json_string, true);
 
 if (isset($_POST['text']) && isset($_POST['description'])) {
     $new_item = [
-        'text'
-    ]
+        'text' => $_POST['text'],
+        'descriptiopn' => $_POST['descriptiopn'],
+        'done' => false
+    ];
 }
+
+
 
 header('Content-Type: applicationm/json');
 

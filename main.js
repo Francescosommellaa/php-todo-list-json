@@ -40,6 +40,17 @@ createApp({
             this.newTask.title = '';
             this.newTask.description = '';
         }
+
+        toggleDone(index) {
+            console.log(index);
+            const data = new FormData();
+            data.append('indexToToggle', index);
+
+            axios.post(this.apiUrl, data, {
+            }).then(res => {
+                this.list = res.data;
+            })
+        }
     },
 
     mounted() {
