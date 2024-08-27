@@ -23,15 +23,18 @@ createApp({
     },
 
     addTask() {
+        const data = new FormData();
+        data.append('text', this.newTask.title);
+        data.append('description', this.newTask.description);
+
         axios.post(this.apiUrl, data, {
             headers: { 'Content-Type': 'multipart/form-data' }
         }).then(res => {
             this.list = res.data;
         })
 
-        const data = new FormData();
-        data.append('text', this.newTask.title);
-        data.append('text', this.newTask.title);
+        this.newTask.title = '';
+        this.newTask.description = '';
     },
 
     mounted() {

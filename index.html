@@ -21,7 +21,7 @@
   </ul>
 
   <div>
-    <input v-model="newTask.title" type="text" placeholder="Nuovo Task">
+    <input v-model.trim="newTask.title" type="text" placeholder="Nuovo Task">
     <textarea v-model="newTask.description" placeholder="Descrizione"></textarea>
     <button type="button" @clik="add.task"></button>
   </div>
