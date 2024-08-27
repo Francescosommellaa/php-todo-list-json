@@ -5,12 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List</title>
-  <link rel="stylesheet" href="./src/assets/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div id="app"></div>
-  <script type="module" src="./src/main.js"></script>
+  <ul>
+    <li v-for="(item, index) in list" :key="index" :class="{'done': item.done}">
+      {{item.text}}
+
+      <div>
+        <button v-if="item.done">
+        </button>
+      </div>
+    </li>
+  </ul>
+
+  <div>
+    <input v-model="newTask.title" type="text" placeholder="Nuovo Task">
+    <textarea v-model="newTask.description" placeholder="Descrizione"></textarea>
+    <button type="button" @clik="add.task"></button>
+  </div>
 </body>
 
 </html>
