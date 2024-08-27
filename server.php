@@ -9,9 +9,13 @@ if (isset($_POST['text']) && isset($_POST['description'])) {
         'descriptiopn' => $_POST['descriptiopn'],
         'done' => false
     ];
+
+    $list[] = $new_item;
+
+    file_put_contents('tasks.json', json_encode($list));
 }
 
-
+if(isset())
 
 header('Content-Type: applicationm/json');
 

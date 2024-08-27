@@ -10,12 +10,13 @@
 
 <body>
   <ul>
-    <li v-for="(item, index) in list" :key="index" :class="{'done': item.done}">
+    <li v-for="(item, index) in list" :key="index" :class="{'done': item.done}" @click(toggleDone)>
       {{item.text}}
 
       <div>
-        <button v-if="item.done">
+        <button v-if="item.done" @click.stop="deleteTask">
         </button>
+        <button></button>
       </div>
     </li>
   </ul>

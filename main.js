@@ -19,27 +19,27 @@ createApp({
                 .then(res => {
                     this.list = res.data;
                 })
-        }
-    },
+        },
 
-    addTask() {
+        addTask() {
 
-        if (this.newTask.title.length < 3 || this.newTask.description.length < 3) {
-            allert('Il titolo e la descrizione devono avere almeno 3 caratteri')
-        } else {
-            const data = new FormData();
-            data.append('text', this.newTask.title);
-            data.append('description', this.newTask.description);
+            if (this.newTask.title.length < 3 || this.newTask.description.length < 3) {
+                allert('Il titolo e la descrizione devono avere almeno 3 caratteri')
+            } else {
+                const data = new FormData();
+                data.append('text', this.newTask.title);
+                data.append('description', this.newTask.description);
 
-            axios.post(this.apiUrl, data, {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            }).then(res => {
-                this.list = res.data;
-            })
+                axios.post(this.apiUrl, data, {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                }).then(res => {
+                    this.list = res.data;
+                })
 
-            this.newTask.title = '';
-            this.newTask.description = '';
-        }
+                this.newTask.title = '';
+                this.newTask.description = '';
+            }
+        },
 
         toggleDone(index) {
             console.log(index);
@@ -50,11 +50,15 @@ createApp({
             }).then(res => {
                 this.list = res.data;
             })
+        },
+
+        deleteTask(index) {
+
+        },
+
+        mounted() {
+            this.getApi();
         }
     },
-
-    mounted() {
-        this.getApi();
-    }
 
 }).mount('#app');
